@@ -11,9 +11,19 @@ class Index_Principal(Splash, Login):
             b = 1
         Login.__init__(self)
         self.loginwindow.mainloop()
-      
+        self.mainwindow.TopLevel(bg="black")
+        width = 1350
+        height = 700
+        screen_width = self.mainwindow.winfo_screenwidth()
+        screen_height = self.mainwindow.winfo_screenheight()
+        x = (screen_width / 2) - (width / 2)
+        y = (screen_height / 2) - (height / 2)
+        self.mainwindow.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
+        self.mainwindow.geometry("%dx%d+%d+%d" % (width, height, x, y))
+        self.mainwindow.resizable(0, 0)
            
 
 if __name__=="__main__":
     b = 0
     w = Index_Principal()
+    w.mainwindow.mainloop()
