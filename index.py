@@ -1,4 +1,4 @@
-from tkinter import ttk
+
 from tkinter import *
 from intro import Splash
 from Usuario import Login
@@ -11,7 +11,7 @@ class Index_Principal(Splash, Login):
             b = 1
         Login.__init__(self)
         self.loginwindow.mainloop()
-        self.mainwindow.TopLevel(bg="black")
+        self.mainwindow = Toplevel(bg="black")
         width = 1350
         height = 700
         screen_width = self.mainwindow.winfo_screenwidth()
