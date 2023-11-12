@@ -52,7 +52,6 @@ class Login:
     def verifica_erros(self) -> None:
         messagebox.showerror("Erro", "Nome de Usuário ou Senha Incorreta")
       
-    
     def sucesso_login(self) -> None:
         messagebox.showinfo("Login", "Login efetuado com sucesso")
         self.loginwindow.quit()

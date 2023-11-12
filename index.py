@@ -13,17 +13,17 @@ class Index_Principal(Splash, Login, Admin):
         Login.__init__(self)
         self.loginwindow.mainloop()
 
-        self.mainwindow = Toplevel(bg="black")
+        self.mainw = Toplevel(bg="black")
         width = 800
         height = 600
-        screen_width = self.mainwindow.winfo_screenwidth()
-        screen_height = self.mainwindow.winfo_screenheight()
+        screen_width = self.mainw.winfo_screenwidth()
+        screen_height = self.mainw.winfo_screenheight()
         x = (screen_width / 2) - (width / 2)
         y = (screen_height / 2) - (height / 2)
-        self.mainwindow.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
-        self.mainwindow.geometry("%dx%d+%d+%d" % (width, height, x, y))
-        self.mainwindow.title("Tobacco Realm")
-        self.mainwindow.resizable(0, 0)
+        self.mainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
+        self.mainw.geometry("%dx%d+%d+%d" % (width, height, x, y))
+        self.mainw.title("Tobacco Realm")
+        self.mainw.resizable(0, 0)
         self.getdetalhes()
            
     def getdetalhes(self) -> None:
@@ -35,4 +35,4 @@ class Index_Principal(Splash, Login, Admin):
 if __name__=="__main__":
     b = 0
     w = Index_Principal()
-    w.mainwindow.mainloop()
+    w.mainw.mainloop()

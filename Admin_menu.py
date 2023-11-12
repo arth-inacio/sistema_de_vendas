@@ -1,30 +1,52 @@
 import sqlite3
 from tkinter import ttk
 from tkinter import *
-
+from tkinter import messagebox
 
 class Admin:
+    def __init__(self, mainw):
+        self.mainw=mainw
     def admin_mainmenu(self, a, b):
-        self.mainframe = LabelFrame(self.mainwindow, width=1200, height=145, bg="#f7f7f7", bd=0)
-        self.mainframe.place(x=100, y=100)
+        self.mainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
+        self.mainframe = LabelFrame(self.mainw, width=600, height=100, bg="#f7f7f7")
+        self.mainframe.place(x=50, y=50)
 
-        self.conta = Button(self.mainframe, text="Perfil", bd=1, font="roboto 11 bold", compound=TOP)
-        self.conta.place(x=655, y=27)
+        mi = PhotoImage(file="images/carrinho.png")
+        mi = mi.subsample(a, b)
+        self.aitems = Button(self.mainframe, text="ITEMS",bd=0,font="roboto 11 bold", image=mi)
+        self.aitems.image = mi
+        self.aitems.place(x=260, y=17)
 
-        self.sair = Button(self.mainframe, text="Sair", bd=1, font="roboto 11 bold", compound=TOP)
-        self.sair.place(x=1050, y=27)
+        mi = PhotoImage(file="images/nota.png")
+        mi = mi.subsample(a,b)
+        self.aitems = Button(self.mainframe, text="NOTAS",bd=0,font="roboto 11 bold", image=mi)
+        self.aitems.image = mi
+        self.aitems.place(x=62, y=17)
 
-        self.trocarusuario = Button(self.mainframe, text="Trocar Usuário", bd=1, font="roboto 11 bold", compound=TOP)
-        self.trocarusuario.place(x=855, y=27)
+        mi = PhotoImage(file="images/usertrocar.png")
+        mi = mi.subsample(a, b)
+        self.changeuser = Button(self.mainframe, text="SAIR",bd=0,font="roboto 11 bold", image=mi)
+        self.changeuser.image = mi
+        self.changeuser.place(x=460, y=17)
 
-        self.items = Button(self.mainframe, text="Itens", bd=1, font="roboto 11 bold", compound=TOP)
-        self.items.place(x=47, y=27)
+        mi = PhotoImage(file="images/sair.png")
+        mi = mi.subsample(a, b)
+        self.logout = Button(self.mainframe, text="FECHAR",bd=0,font="roboto 11 bold", image=mi)
+        self.logout.image = mi
+        self.logout.place(x=670, y=17)
 
-        self.Estoque = Button(self.mainframe, text="Inventario", bd=1, font="roboto 11 bold", compound=TOP)
-        self.Estoque.place(x=255, y=27)
+        self.tableframe1 =Frame(self.mainw, width=150, height=400,bg="#9ACD32")
+        self.tableframe1.place(x=1230, y=270, anchor=NE)
+        self.tableframe1info=self.tableframe1.place_info()
 
-        self.vendas = Button(self.mainframe, text="Vendas", bd=1, font="roboto 11 bold", compound=TOP)
-        self.vendas.place(x=455, y=27)
+        self.tableframe =Frame(self.mainw, width=350, height=700,bg="#9ACD32")
+        self.tableframe.place(x=1110, y=300, anchor=NE)
+        self.tableframeinfo = self.tableframe.place_info()
 
-        self.formframe = Frame(self.mainwindow, width=500, height=550, bg="yellow")
-        self.formframe.place(x=100, y=315)
+        self.entryframe = Frame(self.mainw, width=800, height=350, bg="#9ACD32")
+        self.entryframe.place(x=810, y=460+20)
+        self.entryframeinfo = self.entryframe.place_info()
+
+        self.entryframe1 = Frame(self.mainw, width=500, height=350, bg="#9ACD32")
+        self.entryframe1.place(x=230, y=470+20)
+        self.entryframe1info=self.entryframe1.place_info()
