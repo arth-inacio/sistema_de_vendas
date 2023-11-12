@@ -1,7 +1,7 @@
 
 from tkinter import *
 from intro import Splash
-from Usuario import Login
+from Usuariologin import Login
 from Admin_menu import Admin
 
 class Index_Principal(Splash, Login, Admin):
