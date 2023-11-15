@@ -14,7 +14,7 @@ class Index_Principal(Splash, Login, Admin):
         self.loginwindow.mainloop()
 
         self.mainw = Toplevel(bg="black")
-        width = 800
+        width = 1000
         height = 600
         screen_width = self.mainw.winfo_screenwidth()
         screen_height = self.mainw.winfo_screenheight()

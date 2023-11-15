@@ -29,7 +29,6 @@ class Main(Splash, Login, User):
         self.mainw.title("SISTEMA DE VENDAS EM TKINTER")
         self.mainw.resizable(0,0)
         self.mainw.protocol('WM_DELETE_WINDOW', self.__Main_del__)
-
         self.getdetails()
 
     def __Main_del__(self) -> None:
@@ -56,7 +55,8 @@ class Main(Splash, Login, User):
         
         self.storelable=Label(self.topframe,text="Tobacco Realm",bg="#8A2BE2",justify="center")
         self.storelable.config(font="Roboto 30 bold",fg="snow")
-        self.storelable.place(x=360,y=30)
+        self.storelable.place(x=655,y=30)
+
         mi = PhotoImage(file="images/perfil1.png")
         mi = mi.subsample(4,4)
         self.myprofile = ttk.Label(self.topframe,text=(self.username.get()).capitalize(),image=mi)

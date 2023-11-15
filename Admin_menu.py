@@ -6,14 +6,15 @@ from tkinter import messagebox
 class Admin:
     def __init__(self, mainw):
         self.mainw=mainw
+
     def admin_mainmenu(self, a, b):
         self.mainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
-        self.mainframe = LabelFrame(self.mainw, width=600, height=100, bg="#f7f7f7")
+        self.mainframe = LabelFrame(self.mainw, width=900, height=100, bg="#f7f7f7", bd=1)
         self.mainframe.place(x=50, y=50)
-
+        
         mi = PhotoImage(file="images/carrinho.png")
         mi = mi.subsample(a, b)
-        self.aitems = Button(self.mainframe, text="ITEMS",bd=0,font="roboto 11 bold", image=mi)
+        self.aitems = Button(self.mainframe, text="ITEMS", bd=0, font="roboto 11 bold", image=mi)
         self.aitems.image = mi
         self.aitems.place(x=260, y=17)
 
@@ -34,6 +35,12 @@ class Admin:
         self.logout = Button(self.mainframe, text="FECHAR",bd=0,font="roboto 11 bold", image=mi)
         self.logout.image = mi
         self.logout.place(x=670, y=17)
+
+        mi = PhotoImage(file="images/perfil1.png")
+        mi = mi.subsample(a, b)
+        self.logout = Button(self.mainframe, text="PERFIL1",bd=0,font="roboto 11 bold", image=mi)
+        self.logout.image = mi
+        self.logout.place(x=800, y=17)
 
         self.tableframe1 =Frame(self.mainw, width=150, height=400,bg="#9ACD32")
         self.tableframe1.place(x=1230, y=270, anchor=NE)
