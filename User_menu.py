@@ -9,7 +9,7 @@ class User:
 
     def user_mainmenu(self, a, b):
         self.mainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
-        self.mainframe = LabelFrame(self.mainw, width=800, height=140, bg="#f7f7f7")
+        self.mainframe = LabelFrame(self.mainw, width=900, height=140, bg="#f7f7f7")
         self.mainframe.place(x=330, y=120)
         mi = PhotoImage(file="images/carrinho.png")
         mi = mi.subsample(a, b)

@@ -30,7 +30,20 @@ class Index_Principal(Splash, Login, Admin):
         self.amontarmain()
 
     def amontarmain(self) -> None:
+        #Aqui fica o nome no topo da pagina
         self.admin_mainmenu(8,8)
+        self.topframe = LabelFrame(self.mainw, width=900, height=80, bg="black")
+        self.topframe.place(x=50, y=5)
+        self.loja_name = "Tobacco Realm"
+        self.lable_loja = Label(self.topframe, text=self.loja_name, bg="black", justify="center")
+        self.lable_loja.config(font="Roboto 30 bold", fg="snow")
+        self.lable_loja.place(x=300, y=15)
+        
+        img = PhotoImage(file="images/perfil1.png")
+        img = img.subsample(4, 4)
+        self.meu_perfil = Label(self.topframe, image=img, compound=TOP)
+        self.meu_perfil.image = img
+        self.meu_perfil.place(x=1300, y=15)
 
 if __name__=="__main__":
     b = 0

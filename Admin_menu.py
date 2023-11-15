@@ -9,9 +9,9 @@ class Admin:
 
     def admin_mainmenu(self, a, b):
         self.mainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
-        self.mainframe = LabelFrame(self.mainw, width=900, height=100, bg="#f7f7f7", bd=1)
-        self.mainframe.place(x=50, y=50)
-        
+        self.mainframe = LabelFrame(self.mainw, width=850, height=95, bg="#f7f7f7")
+        self.mainframe.place(x=50, y=100)
+
         mi = PhotoImage(file="images/carrinho.png")
         mi = mi.subsample(a, b)
         self.aitems = Button(self.mainframe, text="ITEMS", bd=0, font="roboto 11 bold", image=mi)
