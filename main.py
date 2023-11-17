@@ -47,18 +47,19 @@ class Main(Splash, Login, User):
 
         super(User).__init__()
         self.user_mainmenu(8,8)
-        self.loginw.iconbitmap(r'C:\Sistema_vendas_tkinter_copia\images\icon.ico')
+        self.loginw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\icon.ico')
         self.logout.config(command=self.__Main_del__)
         self.changeuser.config()
         self.topframe=LabelFrame(self.mainw,width=1800,height=120,bg="#8A2BE2")
         self.topframe.place(x=0,y=0)
         
-        self.storelable=Label(self.topframe,text="     EM PYTHON TKINTER",bg="#8A2BE2",justify="center")
+        self.storelable=Label(self.topframe,text="Tobacco Realm", bg="darkgreen", justify="center")
         self.storelable.config(font="Roboto 30 bold",fg="snow")
         self.storelable.place(x=360,y=30)
+
         mi = PhotoImage(file="images/perfil1.png")
         mi = mi.subsample(4,4)
-        self.myprofile = ttk.Label(self.topframe,text=(self.username.get()).capitalize(),image=mi)
+        self.myprofile = ttk.Label(self.topframe, text=(self.username.get()).capitalize(), image=mi)
         self.myprofile.image = mi
         self.myprofile.place(x=1300,y=15)
             

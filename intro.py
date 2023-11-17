@@ -1,7 +1,6 @@
 from tkinter import *
 from PIL import ImageTk, Image
 
-
 class Splash:
     def __init__(self) -> None:
         self.splashmainw = Tk()
@@ -10,7 +9,6 @@ class Splash:
         height = 680
 
         self.splashmainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\icon.ico')
-
         self.splashmainw.config(bg="darkgreen")
         tela_largura = self.splashmainw.winfo_screenwidth()
         tela_altura = self.splashmainw.winfo_screenheight()
@@ -22,6 +20,7 @@ class Splash:
         img = ImageTk.PhotoImage(Image.open(path))
         main = LabelFrame(self.splashmainw, width=890, height=560, bg="black", relief="sunken", bd="0")
         main.place(x=55,y=70)
+        
         fotoframe = LabelFrame(main, width=420, height=444, bg="black", relief="raised", bd="0")
         foto=Label(fotoframe,image=img)
         foto.place(x=6,y=6)
