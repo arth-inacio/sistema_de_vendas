@@ -1,10 +1,10 @@
 from tkinter import *
 
 class User:
-    def __init__(self,mainw):
+    def __init__(self,mainw) -> None:
         self.mainw=mainw
 
-    def user_mainmenu(self,a,b):
+    def user_mainmenu(self, a, b) -> None:
         self.mainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\icon.ico')
         self.mainframe = LabelFrame(self.mainw, width=800, height=140, bg="#f7f7f7")
         self.mainframe.place(x=330, y=120)
@@ -48,4 +48,3 @@ class User:
         self.entryframe1 = Frame(self.mainw, width=500, height=350, bg="#9ACD32")
         self.entryframe1.place(x=230, y=470+20)
         self.entryframe1info=self.entryframe1.place_info()
-

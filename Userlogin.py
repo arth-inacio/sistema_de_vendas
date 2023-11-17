@@ -31,7 +31,7 @@ class Login:
     def logintable(self) -> None:
         self.base = sqlite3.connect("database.db")
         self.cur = self.base.cursor()
-        self.cur.execute("CREATE TABLE IF NOT EXISTS users(username varchar(20), password  varchar(20) NOT NULL, account_type varchar(10) NOT NULL PRIMARY KEY(username));")
+        self.cur.execute("CREATE TABLE IF NOT EXISTS users(username varchar(20), password varchar(20) NOT NULL, account_type varchar(10) NOT NULL PRIMARY KEY(username));")
     
     def checkuser(self, event=0) -> None:
         session = self.username.get()
