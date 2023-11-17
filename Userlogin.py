@@ -33,6 +33,25 @@ class Login:
         self.cur = self.base.cursor()
         self.cur.execute("CREATE TABLE IF NOT EXISTS users(username varchar(20), password varchar(20) NOT NULL, account_type varchar(10) NOT NULL PRIMARY KEY(username));")
     
+    def obj(self) -> None:
+        self.loginframe=LabelFrame(self.loginw, bg="#D2B48C", height=400, width=300)
+        self.loginw.bind('<Return>')
+        self.loginframe.place(x=103, y=95)
+
+        self.toplabel = Label(self.loginframe, fg="white", bg="#D2B48C", anchor="center", text="Login", font="Roboto 40 bold")
+        self.toplabel.place(x=75, y=25)
+
+        self.us = ttk.Entry(self.loginframe, width=20, textvariable=self.username, font="Roboto 14")
+        self.us.place(x=35, y=145, height=40)
+
+        self.pa = ttk.Entry(self.loginframe, width=20, textvariable=self.password, font="Roboto 14")
+        self.pa.place(x=35, y=185, height=40)
+
+        self.us.bind('<Button-1>', self.onclick)
+        self.pa.bind('<Button-1>', self.onclick1)
+        self.signin = Button(self.loginframe, width=20, text="ENTRAR", bg="#008B8B", fg="white", bd="0", command=self.checkuser, font="Roboto 14")
+        self.signin.place(x=35, y=290)
+    
     def checkuser(self, event=0) -> None:
         session = self.username.get()
         session1 = self.password.get()
@@ -45,31 +64,12 @@ class Login:
             self.success()
         else:
             self.fail()
-
-    def obj(self) -> None:
-        self.loginframe=LabelFrame(self.loginw, bg="#D2B48C", height=400, width=300)
-        self.loginw.bind('<Return>')
-        self.loginframe.place(x=103,y=95)
-
-        self.toplabel = Label(self.loginframe, fg="white", bg="#D2B48C", anchor="center", text="Login", font="Roboto 40 bold")
-        self.toplabel.place(x=75,y=25)
-
-        self.us = ttk.Entry(self.loginframe, width=20, textvariable=self.username,font="Roboto 14 ")
-        self.us.place(x=35,y=145,height=40)
-
-        self.pa = ttk.Entry(self.loginframe, width=20, textvariable=self.password,font="Roboto 14 ")
-        self.pa.place(x=35,y=185,height=40)
-
-        self.us.bind('<Button-1>', self.onclick)
-        self.pa.bind('<Button-1>', self.onclick1)
-        self.signin = Button(self.loginframe, width=20, text="ENTRAR", bg="#008B8B", fg="white", bd="0", command=self.checkuser, font="Roboto 14")
-        self.signin.place(x=35,y=290)
     
     def success(self) -> None:
         self.loginw.quit()
 
     def fail(self) -> None:
-        messagebox.showerror("ATENCAO","USUARIO OU SENHA INCORRETAS")
+        messagebox.showerror("ATENÇÃO","USUARIO OU SENHA INCORRETOS")
 
     def onclick(self, event) -> None:
         self.us.delete(0, "end")
@@ -77,4 +77,3 @@ class Login:
     def onclick1(self, event) -> None:
         self.pa.delete(0, "end")
         self.pa.config(show = "*")
-
