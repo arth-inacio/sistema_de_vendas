@@ -50,9 +50,19 @@ class Admin:
         self.tableframe.place(x=1110, y=300, anchor=NE)
         self.tableframeinfo = self.tableframe.place_info()
 
-        self.entryframe = Frame(self.mainw, width=800, height=350, bg="#9ACD32")
-        self.entryframe.place(x=810, y=460+20)
-        self.entryframeinfo = self.entryframe.place_info()
+        self.itemframe = Frame(self.mainw, width=800, height=350, bg="#9ACD32")
+        self.itemframe.place(x=810, y=460+20)
+        self.itemframeinfo = self.itemframe.place_info()
+
+        self.searchframe = Frame(self.mainw, width=800, height=350, bg="#9ACD32")
+        self.searchframe.place(x=575, y=260)
+        self.searchframeinfo=self.searchframe.place_info()
+
+        self.searchbut = Button(self.searchframe, text="Pesquisar Descricao", bd=0, font="roboto 14 bold", bg="#9ACD32")
+        self.searchbut.place(x=0, y=20, height=40)
+
+        self.resetbut = Button(self.searchframe, text="Restabelecer", bd=0, font="roboto 14 bold", bg="#9ACD32")
+        self.resetbut.place(x=0, y=60, height=40)
 
         self.entryframe1 = Frame(self.mainw, width=500, height=350, bg="#9ACD32")
         self.entryframe1.place(x=230, y=470+20)
