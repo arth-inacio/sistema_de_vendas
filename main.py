@@ -1,3 +1,4 @@
+import sqlite3
 from tkinter import ttk
 from tkinter import *
 from tkinter import messagebox
@@ -30,7 +31,7 @@ class Main(Splash, Login, User):
         self.getdetails()
 
     def __Main_del__(self) -> None:
-        if messagebox.askyesno("SAIR", " DESEJA REALMENTE SAIR DO SISTEMA?") == True:
+        if messagebox.askyesno("Sair", "Deseja realmente sair do sistema?") == True:
             self.loginw.quit()
             self.mainw.quit()
             exit(0)
