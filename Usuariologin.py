@@ -1,7 +1,5 @@
-import sqlite3
 from tkinter import ttk
 from tkinter import *
-from PIL import ImageTk, Image
 from tkinter import messagebox
 
 class Login:
@@ -10,7 +8,7 @@ class Login:
         self.loginwindow.title("Login")
         width = 1000
         height = 680
-        self.loginwindow.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
+        self.loginwindow.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\icon.ico')
         tela_largura = self.loginwindow.winfo_screenwidth()
         tela_altura = self.loginwindow.winfo_screenheight()
         x = (tela_largura / 2) - (width / 2)
@@ -56,9 +54,9 @@ class Login:
         messagebox.showinfo("Login", "Login efetuado com sucesso")
         self.loginwindow.quit()
 
-    def onclick_usuario(self, event) -> None:
+    def onclick_usuario(self) -> None:
         self.us.delete(0, "end")
     
-    def onclick_senha(self, event) -> None:
+    def onclick_senha(self) -> None:
         self.pa.delete(0, "end")
         self.pa.config(show="*")

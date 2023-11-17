@@ -1,14 +1,11 @@
-import sqlite3
-from tkinter import ttk
 from tkinter import *
-from tkinter import messagebox
 
 class Admin:
-    def __init__(self, mainw):
+    def __init__(self, mainw) -> None:
         self.mainw=mainw
 
-    def admin_mainmenu(self, a, b):
-        self.mainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\favicon.ico')
+    def admin_mainmenu(self, a, b) -> None:
+        self.mainw.iconbitmap(r'C:\\Users\\Arthur\\Documents\\GitHub\\sistema_de_vendas\\images\\icon.ico')
         self.mainframe = LabelFrame(self.mainw, width=850, height=95, bg="#f7f7f7")
         self.mainframe.place(x=50, y=100)
 
@@ -58,10 +55,10 @@ class Admin:
         self.searchframe.place(x=575, y=260)
         self.searchframeinfo=self.searchframe.place_info()
 
-        self.searchbut = Button(self.searchframe, text="Pesquisar Descricao", bd=0, font="roboto 14 bold", bg="#9ACD32")
+        self.searchbut = Button(self.searchframe, text="Pesquisar Descricao", font="roboto 14 bold", bd=1, bg="#9ACD32")
         self.searchbut.place(x=0, y=20, height=40)
 
-        self.resetbut = Button(self.searchframe, text="Restabelecer", bd=0, font="roboto 14 bold", bg="#9ACD32")
+        self.resetbut = Button(self.searchframe, text="Restabelecer", font="roboto 14 bold", bd=1, width=10, bg="#9ACD32")
         self.resetbut.place(x=0, y=60, height=40)
 
         self.entryframe1 = Frame(self.mainw, width=500, height=350, bg="#9ACD32")
