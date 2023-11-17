@@ -24,7 +24,7 @@ class Login:
         self.obj()
 
     def __login_del__(self) -> None:
-        if messagebox.askyesno("SAIR", " DESEJA REALMENTE SAIR DO SISTEMA?") == True:
+        if messagebox.askyesno("SAIR", "Deseja sair do sistema?") == True:
             self.loginw.destroy()
             exit(0)                   
 
@@ -35,7 +35,7 @@ class Login:
     
     def obj(self) -> None:
         self.loginframe=LabelFrame(self.loginw, bg="#D2B48C", height=400, width=300)
-        self.loginw.bind('<Return>')
+        self.loginw.bind('<Return>', self.checkuser)
         self.loginframe.place(x=103, y=95)
 
         self.toplabel = Label(self.loginframe, fg="white", bg="#D2B48C", anchor="center", text="Login", font="Roboto 40 bold")
@@ -60,7 +60,7 @@ class Login:
 
         self.cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", (session, session1))
         tamq = self.cur.fetchall()
-        if len(tamq) > 0:
+        if (len(tamq) > 0):
             self.success()
         else:
             self.fail()
